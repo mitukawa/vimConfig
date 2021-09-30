@@ -134,9 +134,20 @@ endif
 
 " Copyright (C) 2009-2016 KaoriYa/MURAOKA Taro
 
-"ノーマルモードに<C-j>でも以降可能にする"
-imap <C-j> <esc>
-noremap! <C-j> <esc>
-"起動時にset numberを実行する"
-set number
+"ノーマルモードに<C-j>でも移行可能にする
+inoremap <C-j> <esc>
+
+" ビジュアルモードでペーストしたときにヤンクされないようにする
+vnoremap <silent> p "0p<CR>
+
+" <c-m>でマークの一覧を表示
+nnoremap <c-m> :marks <CR>
+
+" <c-a>で全選択
+nnoremap <c-a> mtgg<s-V>G
+
+" ノーマルモード中に<c-j>でjumpリストを開く
+nnoremap <c-j> :jump <CR>
+
+
 
